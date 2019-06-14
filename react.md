@@ -2,14 +2,6 @@
 
 👨‍🏫 Explanation of modern web development and architectures. Sources are listed. Pull requests are welcome! 
 
-## Table of Contents
-
-* [GitHub](#github)
-* [Dependent Services](#refrain-from-dependent-services)
-* [Functional Services](#functional-services)
-* [React](#react)
-* [Code quality](#code-quality)
-* [Testing and coverage](#testing-and-coverage)
 
 ## GitHub 👨‍💻
 
@@ -63,6 +55,8 @@ ECMA [TC39](https://www.ecma-international.org/memento/tc39-rf-tg.htm) is an com
 __What prerequisite knowledge do I need to know before using React?__ :question:
 
 Most React boilerplate projects - like __Create-React-App__ from the Facebook React core team, __Next.js__ from Now, or __Gatsby__ - use modern JavaScript features developed by an elite committee named [TC39](https://www.ecma-international.org/memento/tc39-rf-tg.htm) that aren't available in vanilla JavaScript, because vanilla JavaScript doesn't understand the syntax. The committee looks for ways to improve developer's experience in JavaScript development.
+
+It is important you learn and understand ECMAScript 2015 (ES6) syntax, because this syntax is shown in the React documentation, code examples, component packages, and questions on StackOverflow.
 
 __Why transpile new JavaScript into Vanilla JavaScript?__ 🍦
 
