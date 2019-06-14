@@ -54,9 +54,43 @@ Side [effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) are
 
 ## React ⚛️
 
+### Background :books:
+
+__Who creates and manages new JavaScript features?__ :thinking:
+
+ECMA [TC39](https://www.ecma-international.org/memento/tc39-rf-tg.htm) is an committee for futher developing the JavaScript language. New features are proposed to this organization and the feature undergoes a three-step process to adoption. For more details, check out the TC39 link above. If you have a proposal or improvement you want to make in JavaScript, or just want to see current feature propoals, [check out the Official TC-39 organization on GitHub](https://github.com/tc39).
+
+__What prerequisite knowledge do I need to know before using React?__ :question:
+
+Most React boilerplate projects - like __Create-React-App__ from the Facebook React core team, __Next.js__ from Now, or __Gatsby__ - use modern JavaScript features developed by an elite committee named [TC39](https://www.ecma-international.org/memento/tc39-rf-tg.htm) that aren't available in vanilla JavaScript, because vanilla JavaScript doesn't understand the syntax. The committee looks for ways to improve developer's experience in JavaScript development.
+
+__Why transpile new JavaScript into Vanilla JavaScript?__ 🍦
+
+- All browsers, inluding lagacy browsers (Internet Explorer), will be able to understand Vanilla JavaScript syntax.
+- ECMAScript features are transpiled at runtime in modern browsers into Vanilla JS or [ES5]()
+
+**So, how do we transpile this code into JavaScript that all browsers, not just Google Chrome, understand?** 👩‍🚀
+
+[Babeljs](https://babeljs.io/docs/en/#babel-is-a-javascript-compiler) is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. 
+
+Google Chrome runs the **V8** JavaScript engine, which is also available in [Node.js](https://nodejs.org/en/docs/). If you write ES6 syntax JavaScript in the console of Google Chrome, such as an Arrow Function, the engine will understand the syntax and allow you to run that function. 
+
+Other browsers use their own JavaScript engines: 🔬
+
+| Web Browser | JavaScript Engine |
+| ----------- | ----------------- |
+| Google Chrome | V8 / Chromium |
+| Mozilla Firefox | SpiderMonkey |
+| Apple Safari | WebKit |
+| Microsoft Edge | <ul><li>Originally:Chakra</li><li>New:Chromium</li></ul> |
+| Microsoft Internet Explorer | Chakra |
+
+With each engine supporting different specifications, the TC-39 team can push out new JavaScript features and syntax and the Babel team adopts them quicker than the Browser teams.
+
+### Introduction :handshake:
 React is a view layer 👀, declarative library for creating user interfaces. React is currently maintained and released by Facebook.
 
-In [react](https://reactjs.org/docs/components-and-props.html#function-and-class-components), components can be written as either a `class` or as a `function`. There are various advantages to either approach but ideally you want to have stateless `function` components. In the past, react only allowed `class` components to manage/display state of your app but this is no longer the case. With the addition of [Hooks](https://reactjs.org/docs/hooks-intro.html) 🎣, you can add state to your functional components and refrain from adding `lifecycle methods` like `componentDidMount, componentWillMount, and componentWillUnmount` to manage state. Just `import React, { useState } from 'react';` in the top line of your react component (in react version 16.8.\*) to add state to your function components. 
+In [React](https://reactjs.org/docs/components-and-props.html#function-and-class-components), components can be written as either a `class` or as a `function`. There are various advantages to either approach but ideally you want to have stateless `function` components. In the past, React only allowed `class` components to manage/display state of your app but this is no longer the case. With the addition of [Hooks](https://reactjs.org/docs/hooks-intro.html) 🎣, you can add state to your functional components and refrain from adding `lifecycle methods` like `componentDidMount, componentWillMount, and componentWillUnmount` to manage state. Just `import React, { useState } from 'react';` in the top line of your React component (in version 16.8.\*) to add state to your function components. 
 
 Declaring functional components is not the same. Using a variable declaration and setting that to an `arrow function` ➡️ or function expression is not the same as using `function expression` alone. For example:
 
