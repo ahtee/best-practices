@@ -2,9 +2,9 @@
 
 Source from the [IBM Redbooks](http://www.redbooks.ibm.com/redbooks/pdfs/sg248358.pdf)
 
-## Identifying candidates with the Monolith
+## Identifying candidates with the Monolith 🕵️🙋‍♀️
 
-### Identifying Candidates
+### Identifying Candidates 🔍
 
 Candidates may be in the following situations:
 
