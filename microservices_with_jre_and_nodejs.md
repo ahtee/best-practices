@@ -12,11 +12,11 @@ Candidates may be in the following situations:
 - You are unbale to apply a single deployment. Usually it is necessary to invilve other modules or components to build, test, and deploy, even for small changes or enhancements. There is no separation of modules and components inside the same package of `.ear` or `.war` files.
 - Only a single choice of technology exists and you cannot take advantage of new technologies, libraries, or techniques that are being adopted by other enterprises. Your current technology stack does not support the functionality you need. You want to generate documentation automatically from your code but the current technology used in your system or platform does not offer these features.
 - Your large systems have the following characteristics:
-  - High amount of data in memory :chart_with_upwards_trend:
-  - High-use CPU operations :chart_with_upwards_trend:
-  - Unable to scale a portion of the application; usually the entire application must be scaled. :chart_with_upwards_trend:
-  - Cannot be easily updated and maintained 🙅‍♂️
-  - Code dependencies are difficult to manage :sob:
+  - High amount of data in memory :chart_with_upwards_trend: ❌
+  - High-use CPU operations :chart_with_upwards_trend: ❌
+  - Unable to scale a portion of the application; usually the entire application must be scaled. :chart_with_upwards_trend: ❌
+  - Cannot be easily updated and maintained 🙅‍♂️ ❌
+  - Code dependencies are difficult to manage :sob: ❌
 
 ### Considerations for moving to Microservices :thinking:
 
@@ -53,14 +53,15 @@ Microservices are more aligned to business because they allow for frequent and f
 
 With microservices, different parts of the system can be scaled. Each microservice is responsible for specific functionality, which results in more flexible scalability.
 
-- Security zoning
+- Security zoning 👷
 
 Security architects insist on a layered approach to building a system to avoid risk of having important code running on web-facing servers. Microservices can provide zoning that is analagous to the traditional layered approach. Business logic and critical data storage can be separated from the services that provide HTML rendering, for example. Communication between individual microservices can be firewalled, encrypted and secured in other ways.
 
-### Decomposing the monilith application into microservices
+### Decomposing the monilith application into microservices 🏗️🚧
 
 
-### Refactoring
+
+### Refactoring ♻️
 
 ## Enterprise data access patterns
 
