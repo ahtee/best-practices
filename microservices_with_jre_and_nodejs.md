@@ -183,15 +183,15 @@ the system as microservices running together with the monolith application. Over
 amount of functionality provided by the monolith application shrinks until it is completely
 migrated to microservices. This is considered a __careful strategy__. 
 
-- Do not add new features in the monolithic application; this prevents it from getting
+- __Do not add new features__ in the monolithic application; this prevents it from getting
 larger. For all new features, use independent microservices.
-  -  Create microservices organized around business capability, where each microservice
+  -  __Create microservices organized around business capability__, where each microservice
 is responsible for one topic.
     - A monolithic application usually consists of layers, such as presentation, business
 rules, and data access. You can create a microservice for presentation and create
-another microservice for business access data. The focus is always on functionality
-and business.
-      - Use Bounded Context, dividing a complex domain into
+another microservice for business access data. The focus is always on __functionality
+and business__.
+      - Use __Bounded Context__, dividing a complex domain into
 multiple bounded contexts and mapping out the relationships between them, where a
 natural correlation between service and context boundaries exists
 
