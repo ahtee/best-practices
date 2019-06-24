@@ -11,6 +11,7 @@ Candidates may be in the following situations:
 - You are unable to deploy your application fast enough to meet requirements because of difficulty maintaining, modifying and becoming productive quickly, resulting in long cycles of time-to-market to roll out ner services. You are unable to build, test, and deploy your application in a timely manner.
 - You are unbale to apply a single deployment. Usually it is necessary to invilve other modules or components to build, test, and deploy, even for small changes or enhancements. There is no separation of modules and components inside the same package of `.ear` or `.war` files.
 - Only a single choice of technology exists and you cannot take advantage of new technologies, libraries, or techniques that are being adopted by other enterprises. Your current technology stack does not support the functionality you need. You want to generate documentation automatically from your code but the current technology used in your system or platform does not offer these features.
+
 - Your large systems have the following characteristics:
   - High amount of data in memory :chart_with_upwards_trend: ❌
   - High-use CPU operations :chart_with_upwards_trend: ❌
@@ -18,27 +19,27 @@ Candidates may be in the following situations:
   - Cannot be easily updated and maintained 🙅‍♂️ ❌
   - Code dependencies are difficult to manage :sob: ❌
 
-### Considerations for moving to Microservices :thinking:
+## Considerations for moving to Microservices :thinking:
 
 Consider the following important aspects before you move to microservices:
 
-- Flexibility for the development platform :sweat_smile:
+### Flexibility for the development platform :sweat_smile:
 
 Microservices offer flexibility to choose the correct tool for the job; the idea is that each microservice can be backed by a different technology. A microservice can use different languagesl this enables you to choose the preferred technology for a particular problem rather than following the standard.
 
-- Design by functionality and responsibilities :art:
+### Design by functionality and responsibilities :art:
 
 Microservices offer separation of components and responsibilitiesL each microservice is responsible for a determinate topic. You may apply new features or improvements in specific parts of the system and also avoid mistakes or damage a part of the system that is working. This approach can be used for isolating older functionality; new functionality can be added to the monolith system by adding a microservice.
 
-- Easily rewrite complete services :writing_hand:
+### Easily rewrite complete services :writing_hand:
 
 Usually a microservice is a small services that are resy to rewrite, maintain, and change. Microservices provide a strong encapsulation model and a safe way to refactor and rewrite.
 
-- Flexibility for changes :dancer:
+### Flexibility for changes :dancer:
 
 With microservices, you can defer decision and have flexibility in the growth of your architecture as your understanding od the system and domain increases. You can defer difficult decisions until they are absolutely required. The only function that a service provides is a thin domain-aware wrapping over a data store, but the most important function to get correct is the **interface with which your other services interact**.
 
-- Driving business value :car:
+### Driving business value :car:
 
 Business owners will be able to see the benefit of microservices because they want their teams to be able to respond rapidly to new customer and market needs. As we know today, the monolithic application approach slows down our response and we have to be extremely careful not to break parts of the application which may be dependent on any or all other parts.
 
@@ -49,24 +50,24 @@ Microservices are more aligned to business because they allow for frequent and f
   - Scaling an individual microservice for removing bottlenecks enables a smoother user experience.
   - Identifying and eliminating duplicate services reduces development costs.
 
-- Flexibility regarding scalability
+### Flexibility regarding scalability
 
 With microservices, different parts of the system can be scaled. Each microservice is responsible for specific functionality, which results in more flexible scalability.
 
-- Security zoning 👷
+### Security zoning 👷:key: ✅
 
 Security architects insist on a layered approach to building a system to avoid risk of having important code running on web-facing servers. Microservices can provide zoning that is analagous to the traditional layered approach. Business logic and critical data storage can be separated from the services that provide HTML rendering, for example. Communication between individual microservices can be firewalled, encrypted and secured in other ways.
 
-### Decomposing the monilith application into microservices 🏗️🚧
+## Decomposing the monilith application into microservices 🏗️🚧
 
-**Choosing the Implementation Stack :point_right: :books:**
+### Choosing the Implementation Stack :point_right: :books:
 
 Because microservices systems consist of individual services running as separate
 processes, the expectation is that any competent technology that is capable of supporting
 communication or messaging protocols works. The communications protocols might be, for
 example, HTTP and REST. You must consider several aspects, though, when choosing the implementation stack:
 
-- Synchronous versus Asynchronous 🛑⤴️vs 🔂
+### Synchronous versus Asynchronous 🛑⤴️vs 🔂
 
 Classic stacks, such as Java Platform Enterprise Edition (Java EE), work by _synchronous
 blocking_ on network requests. As a result, they must run in separate threads to be able to
@@ -76,7 +77,7 @@ Asynchronous stacks, such Java Message Server (Java EE JMS) handle requests usin
 an event loop that is often single-threaded, yet can process many more requests when
 handling them requires downstream input and output (I/O) operations.
 
-- I/O versus processor (CPU) bound 📨 vs ⚡️
+### I/O versus processor (CPU) bound 📨 vs ⚡️
 
 Solutions such as Node.js work well for microservices that predominantly deal with I/O
 operations. Node.js provides for waiting for I/O requests to complete without holding up
@@ -89,7 +90,7 @@ following actions is preferred:
 best suited for CPU-intensive work (for example, Java, Go, or C).
 2. Implement the entire service in a stack capable of multithreading.
 
-- Memory 💭 and CPU ⚡️ requirements
+### Memory 💭 and CPU ⚡️ requirements
 
 Microservices are always expressed in plural because you run several of them, not only
 one. Each microservice is further scaled by running multiple instances of it. There are
@@ -101,11 +102,11 @@ However, Java EE stacks, such as IBM WebSphere Liberty, mitigate this problem. A
 stacks such as Node.js and Go are a go-to technology because they are more lightweight
 and require less memory and CPU power per instance.
 
-** Sizing Microservices 👨‍🍳
+## Sizing Microservices 👨‍🍳
 
 The following techniques can be used alone or in combination:
 
-- Number of files 🔢
+### Number of files 🔢
 
 You can gauge the size of a microservice in a system by the number of files it consists of.
 This is imprecise, but at some point you might want to break up a microservice that is
@@ -114,14 +115,14 @@ longer to start and stop. However, be careful not to make them too small. When
 microservices are too small, frequently referred to nanoservices as an anti-pattern, the
 resource cost of deploying and operating such a service overshadows its utility. 
 
-- Too many responsibilities 😱
+### Too many responsibilities 😱
 
 A service that is responsible simultaneously for different subjects might need to be split up
 because usually it is difficult to test, maintain, and deploy. Even if all of the responsibilities
 are of the same type (for example, REST endpoints), there might be too many
 responsibilities for a single service to handle.
 
-- Service type 👨‍🔧
+### Service type 👨‍🔧
 
 A good rule is that a microservice does only one thing, for example, one of the following
 tasks:
@@ -135,7 +136,7 @@ seem the same as the "too many responsibilities" technique, when in fact it is n
 quality, not the quantity, of the responsibilities. An anti-pattern might be a service that
 serves web pages and also provides REST end-points, or serves as a worker.
 
-- Bounded context separation ⛓
+### Bounded context separation ⛓
 
 The name comes from a design pattern proposed by [Martin Fowler](http://martinfowler.com/bliki/BoundedContext.html). 
 It represents parts of the system that are relatively self-sufficient, so there are few links
@@ -143,7 +144,7 @@ to a server that can be turned into microservices. If a microservice needs to ta
 microservices to complete its task, that can be an indication that the division was made in
 an incorrect place in the monolith.
 
-- Team organization 🎳
+### Team organization 🎳
 
 Many microservices systems are organized around teams that are responsible for writing
 the code. Therefore, microservice partition follows team lines to maximize team
@@ -153,7 +154,7 @@ One of the key reasons microservices are popular as an architectural and organiz
 pattern is that they allow teams to plan, develop, and deploy features of a system in the
 cloud without tight coordination. 
 
-### Refactoring ♻️
+## Refactoring ♻️
 
 Refactoring is a practice that modernizes the application and gains resources provided by
 new structures and platforms. The migration of a monolithic application to microservices
@@ -165,15 +166,17 @@ of the code is developed in Java and still works. Refactoring using microservice
 cautious approach because you can keep the old system running and move the monolithic
 application in parts to a more sustainable and current platform.
 
+### Strategy ✍️🤔💡
+
 Moving a monolith application to microservices can involve these strategies: 
 
-- Convert the whole monolith application to microservices 🎛
+#### Convert the whole monolith application to microservices 🎛
 
 The construction of a new application based on microservices __from scratch__ can be the
 best option. However, because this approach can involve too much change at one time, it
 is risky and often ends in failure. 
 
-- Refactor gradually 👍
+#### Refactor gradually 👍
 
 This strategy is based on refactoring the monolith application gradually by building parts of
 the system as microservices running together with the monolith application. Over time the
@@ -244,9 +247,9 @@ from the remainder of the WAR, and then deploy each service as its own WAR.
 The next step might be the most difficult problem in adopting microservices. That step is to create a
 new data model for each microservice based on the current data model.
 
-**Here are the rules to follow:** 👨‍🏫📏
+#### Here are the rules to follow: 👨‍🏫📏
 
--  Isolated islands of data 🏝
+#####  Isolated islands of data 🏝
 
 Begin by looking at the database tables that your code uses. If the tables used are
 either independent of all other tables or come in a small, isolated island of a few tables
@@ -258,7 +261,7 @@ or a document database might be the best option. However, if you do have complex
 joins that vary widely (for example, the queries are unpredictable), staying with SQL
 might be your best option.
 
-- Batch data updates 👨‍🍳
+##### Batch data updates 👨‍🍳
 
 If you have only a few relationships and you decide to move your data into a NoSQL
 database anyway, consider whether you only need to do a batch update into your
@@ -267,7 +270,7 @@ relationships do not consider a time factor; they might not always need to be up
 A data dump and load approach that runs every few hours might be sufficient for many
 cases.
 
-- Table denormalization 🍽
+##### Table denormalization 🍽
 
 If you have more than a few relationships to other tables, you might be able to refactor
 (or in database administrator terms, denormalize) your tables.
