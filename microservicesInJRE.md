@@ -1,4 +1,4 @@
-# Microservices - JRE and Nodejs
+# Microservices in JRE
 
 Source from the [IBM Redbooks](http://www.redbooks.ibm.com/redbooks/pdfs/sg248358.pdf)
 
